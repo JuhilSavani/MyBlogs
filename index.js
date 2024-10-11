@@ -1,3 +1,4 @@
+// Frontend Server
 import express from "express";
 import bodyParser from "body-parser";
 import axios from "axios";
@@ -17,7 +18,7 @@ app.get("/", async (req, res) => {
 app.get("/edit/:id", async (req, res) => {
   const blogId = req.params.id;
   const {data: result} = await axios.get(`${api}/${blogId}`);
-  res.render("form.ejs", { toEdit: true,  action: `/edit/${blogId}`, method: 'post', title: result[0].title, blog: result[0].content, tag: result[0].tag});
+  res.render("form.ejs", { toEdit: true,  action: `/edit/${blogId}`, method: 'post', title: result.title, blog: result.content, tag: result.tag});
 });
 
 app.post("/edit/:id", async (req, res) => {
@@ -46,5 +47,5 @@ app.get("/del/:id", async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running at http://localhost:${port}`);
+  console.log(`Frontend Server is running at http://localhost:${port}`);
 });
