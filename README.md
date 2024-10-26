@@ -90,17 +90,12 @@ This project uses PostgreSQL as its database management system. Follow the steps
   ```
 
 5. **Running the Application**
-In separate terminal windows, run:
-- For the Backend:
-  ```bash
-  node server.js
-  ```
-The backend server will run on `http://localhost:4000`.
-- For the Frontend:
-  ```bash
-  node index.js
-  ```
-The frontend server will run on `http://localhost:3000`.
+
+Use the following command to start both servers concurrently:
+ ```bash
+npm start
+```
+This command will automatically run both the backend and frontend servers for you.
 
 <br/>
 
