@@ -1,7 +1,7 @@
 // Backend Server
 import express from "express";
 import dotenv from "dotenv";
-import { sequelize, connectDb } from "./config/sequelize.config.js";
+import { connectPostgres } from "./config/sequelize.config.js";
 import { Blog } from './models/blog.models.js'
 dotenv.config();
 
@@ -10,9 +10,7 @@ const port = 4000;
 
 app.use(express.json());
 
-connectDb();
-
-sequelize.sync();
+connectPostgres();
 
 app.get("/", async (req, res) => {
   try {

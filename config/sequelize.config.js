@@ -14,13 +14,17 @@ const sequelize = new Sequelize(process.env.DB_URL, {
   },
 });
 
-const connectDb = async () => {
+const connectPostgres = async () => {
   try {
     await sequelize.authenticate();
     console.log("Database has been connected successfully.");
+    if (process.env.NODE_ENV === "development") {
+      await sequelize.sync();
+      console.log("Database synchronized.");
+    }
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
 };
 
-export { sequelize, connectDb };
+export { sequelize, connectPostgres };
