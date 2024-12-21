@@ -69,7 +69,7 @@ Before you begin, ensure that you have the following installed on your machine:
   npm install
   ```
 
-3. **Database Setup**
+3. **Database Setup**<br/>
 This project uses PostgreSQL as its database management system. Follow the steps below to set up the database.
     - Open the terminal on your system.
     - Run the following Command to create a database
